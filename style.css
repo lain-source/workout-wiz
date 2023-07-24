@@ -128,6 +128,24 @@ ul li a i{
   color: black;  
 }
 
+.container {
+  width: 50%;
+  margin: 50px;
+  text-align: left; 
+  padding: 10px;
+}
+
+p {
+  font-size: 18px;
+  color: white;
+}
+
+h2{
+  font-size: 36px;
+  font-family: monaco;
+}
+
+
 
 .landingpage{
   font-size:100px;

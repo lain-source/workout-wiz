@@ -18,6 +18,10 @@ body{
   width:100%;
 }
 
+p{
+  color:#000;
+}
+
 .user-profile{
   padding:3%;
   margin-top:6%;
@@ -26,7 +30,7 @@ body{
   display:flex;
   width:100%;
   height:fit-content;
-  background-color:lightgrey;
+  background-color:#5F9EA0;
 }
 
 .User{
