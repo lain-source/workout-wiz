@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meal Plan</title>
+  <link href="MealPlan.css" rel="stylesheet" type="text/css" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+   <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">WorkoutWiz</label>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="Profile.html">Profile Overview</a></li>
+        <li><a href="Form.html">Edit Profile</a></li>
+        <li><a href="Excercise Routine.html">Exercise Routines</a></li>
+        <li><a class="active" href="#">Meal Plans</a></li>
+      </ul>
+    </nav>
+
+  <section class="meal-plan"> 
+    <h2>Week</h2>
+    <div class="icon-bar">
+      <a id="icon1" class="active" onclick="fillPage(1)"><i class="fa-solid fa-1 fa-2xs"></i></a>
+      <a id="icon2" onclick="fillPage(2)"><i class="fa-solid fa-2 fa-2xs"></i></a>
+      <a id="icon3" onclick="fillPage(3)"><i class="fa-solid fa-3 fa-2xs"></i></a>
+      <a id="icon4" onclick="fillPage(4)"><i class="fa-solid fa-4 fa-2xs"></i></a>
+    </div>
+
+    <div class="meal-card">
+      <div class="container"> 
+        <img src="default-food.jpg" alt="food" class="meal">
+        <div class="dropdown">
+          <button class="dpbtn"><i class="fa-solid fa-angle-down fa-2xs"></i></button>
+          <div class="drop-cont">
+            <a href="#"><i class="fa-solid fa-x fa-2xs"></i></a>
+            <a href="#"><i class="fa-solid fa-star fa-2xs"></i></a>
+            <a href="#"><i class="fa-solid fa-rectangle-list fa-2xs"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="card-dupe">
+      
+    </div>
+  
+  </section>
+
+  <script src="script.js"></script>
+
+  <script>
+    function fillPage(selectedIcon) {
+      const mealCard = document.querySelector('.meal-card');
+      const duplicatedCardsContainer = document.querySelector('.card-dupe');
+      const iconBar = document.querySelector('.icon-bar');
+      const icons = iconBar.getElementsByTagName("a");
+
+      for (let i = 0; i < icons.length; i++) {
+        if (i + 1 === selectedIcon) {
+          icons[i].classList.add("active");
+        } else {
+          icons[i].classList.remove("active");
+        }
+      }
+
+      duplicatedCardsContainer.innerHTML = ''; 
+
+      for (let i = 0; i < 6; i++) { 
+        const clonedCard = mealCard.cloneNode(true); 
+        duplicatedCardsContainer.appendChild(clonedCard); 
+      }
+    }
+  </script>
+</body>
+</html>

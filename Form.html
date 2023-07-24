@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Exercise Overview</title>
+  <link href="style.css" rel="stylesheet"
+  type="text/css" />
+  <link rel="stylesheet"
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/> 
+    <title>Form</title>
+<style>
+
+section{
+  margin: 20px 0px;
+  padding: 20px;
+  background-color: lightgray;
+  border: 1px solid lightgray;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+}
+
+  button{
+    padding: 10px 20px;
+    border: none;
+    background-color: #5F9EA0;
+    color: white;
+    cursor: pointer;
+  }
+
+button:hover {
+  background-color: #4682B4; 
+}
+}
+}
+body{
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: lightgray;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  background-color: lightgray
+}
+
+p {
+  font-size: 24px;
+  text-align: center;
+  margin: 20px 0px;
+}
+
+ul{
+  padding: 0px;
+  text-align: center;
+  list-style: none;
+}
+
+li{
+  display: inline-block;
+  margin: 0px 10px;
+}
+
+a{
+  color:#5F9EA0;
+  text-decoration: none;
+}
+
+section{
+  margin: 20px 0px;
+  padding: 20px;
+  background-color: lightgray;
+  border: 1px solid lightgray;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 1);
+}
+  h1
+  {
+   background-color: lightgray; 
+    
+  }
+
+  button{
+    padding: 10px 20px;
+    border: none;
+    background-color: #001f3f;
+    color: white;
+    cursor: pointer;
+  }
+
+
+button:hover {
+  background-color:#4682B4; 
+}
+}
+</style>
+</head>
+
+<body>
+
+   <nav>
+      <input type="checkbox" id="check">
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <label class="logo">WorkoutWiz</label>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="Profile.html">Profile Overview</a></li>
+        <li><a href="Form.html">Edit Profile</a></li>
+        <li><a href="Excercise Routine.html">Exercise Routines</a></li>
+        <li><a href="MealPlan.html">Meal Plans</a></li>
+      
+          </ul>
+    </nav>
+
+
+  <section id="form">
+    <br><br><br>
+  <h1>FITNESS FORM</h1>
+  <form id="fitness-form">
+   
+ 
+    <form>
+<label for="name">Name:</label>
+        <input type="text" id="name" required><br><br>
+      
+        <label for="gender">Select your gender:</label>
+        <select id="gender" name="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br><br>
+          
+   <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required><br><br>
+
+      <label for="age">Age:</label>
+      <input type="number" id="age"><br><br>
+
+      <label for="food">Food preference:</label>
+        <select id="food" name="food">
+            <option value="vegan">Vegan</option>
+             <option value="vegetarian">Vegetarian</option>
+            <option value="pescatarian">Pescatarian</option>
+            <option value="meatonly">Meat Only</option>
+            <option value="nopreference">No preference</option>
+        </select><br><br>
+
+      <label for="allergies">Allergies:</label>
+        <input type="text" id="allergies"><br><br>
+
+      <label for="weight">Enter your weight <b>(in kilograms)</b>:</label>
+        <input type="number" id="weight">
+      <label for="height">Enter your height <b>(in meters)</b>:</label>
+        <input type="number" id="height">
+        <br>
+        <button type="button" onclick="calculateBMI()">Calculate BMI</button><br><br>
+
+      <div id="bmi-result"></div>
+
+    <script>
+      function calculateBMI() {
+        const weightInput = document.getElementById("weight");
+        const heightInput = document.getElementById("height");
+
+        const weight = parseFloat(weightInput.value);
+        const height = parseFloat(heightInput.value);
+
+        if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+            alert("Please enter valid weight and height.");
+            return;
+        }
+
+        const bmi = weight / (height * height);
+        const resultElement = document.getElementById("bmi-result");
+        resultElement.innerHTML = "Your BMI is: " + bmi.toFixed(2);
+    }
+    </script>
+      <br>
+      
+
+      <label for="level">Fitness level:</label>
+        <select id="level" name="level">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="experienced">Experienced</option>
+        </select><br><br>
+
+      <button type="submit">Submit</button><br><br>
+
+    </form>
+    </section>
+
+</body>
+</html>
